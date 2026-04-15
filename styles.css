@@ -1,0 +1,46 @@
+body { font-family: Arial; margin:0; }
+
+header {
+  background:#0a3f8a;
+  color:white;
+  text-align:center;
+  padding:20px;
+}
+
+nav ul {
+  display:flex;
+  list-style:none;
+  justify-content:center;
+  background:#eee;
+}
+
+nav ul li a {
+  padding:10px;
+  display:block;
+}
+
+main {
+  padding:20px;
+}
+
+section {
+  background:white;
+  margin:10px;
+  padding:15px;
+}
+
+.hero-image {
+  width:100%;
+}
+
+.content-image {
+  width:100%;
+  max-width:400px;
+}
+
+footer {
+  text-align:center;
+  background:#014f86;
+  color:white;
+  padding:10px;
+}
