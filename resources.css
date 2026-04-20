@@ -1,6 +1,5 @@
 
 :root {
-  /* High contrast color palette */
   --primary-blue: #003366;
   --secondary-blue: #005bb5;
   --accent-light: #f0f7ff;
@@ -9,7 +8,7 @@
   --text-muted: #555;
   --bg-white: #ffffff;
   --border-color: #dee2e6;
-  --focus-ring: #ffbf47; /* High visibility yellow for focus */
+  --focus-ring: #ffbf47; 
 }
 
 /* Base Setup */
