@@ -1,6 +1,5 @@
 
 :root {
-  /*
   --primary-blue: #003366;
   --secondary-blue: #005bb5;
   --accent-light: #f0f7ff;
@@ -11,8 +10,6 @@
   --border-color: #dee2e6;
   --focus-ring: #ffbf47; 
 }
-
-/* Base Setup */
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   line-height: 1.75; /* Increased for better readability */
