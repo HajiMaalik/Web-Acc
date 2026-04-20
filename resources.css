@@ -1,25 +1,28 @@
-
 :root {
-  --primary-blue: #003366;
-  --secondary-blue: #005bb5;
-  --accent-light: #f0f7ff;
+  /* Ocean & Forest Palette */
+  --primary-deep: #0a4d55;     /* Deep Sea Teal */
+  --secondary-forest: #2d5a27; /* Forest Green */
+  --accent-mist: #f0f4f2;      /* Misty Seafoam/Grey */
+  --ocean-breeze: #0077b6;     /* Bright Water Blue */
   --success-green: #1e7e34;
-  --text-main: #212529;
-  --text-muted: #555;
+  --text-main: #1a2a2a;        /* Dark Slate */
+  --text-muted: #536363;
   --bg-white: #ffffff;
-  --border-color: #dee2e6;
+  --border-color: #d1d9d9;
   --focus-ring: #ffbf47; 
 }
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  line-height: 1.75; /* Increased for better readability */
+  line-height: 1.75;
   color: var(--text-main);
-  background-color: #f8f9fa;
+  /* Gradient background reflecting water to land */
+  background: linear-gradient(135deg, #f8f9fa 0%, #e8f0ee 100%);
   margin: 0;
   padding: 0;
 }
 
-/* Skip Link - Visible only on focus */
+/* Skip Link */
 .skip-link {
   position: absolute;
   top: -100px;
@@ -46,17 +49,29 @@ main {
 
 /* Typography */
 h1, h2, h3 {
-  color: var(--primary-blue);
+  color: var(--primary-deep);
   line-height: 1.2;
 }
 
-h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
-h2 { font-size: 1.8rem; border-bottom: 2px solid var(--border-color); padding-bottom: 10px; margin-top: 40px; }
+h1 { 
+  font-size: 2.5rem; 
+  margin-bottom: 0.5rem;
+  border-left: 8px solid var(--secondary-forest);
+  padding-left: 15px;
+}
 
-/* Navigation */
+h2 { 
+  font-size: 1.8rem; 
+  border-bottom: 2px solid var(--border-color); 
+  padding-bottom: 10px; 
+  margin-top: 40px; 
+}
+
+/* Navigation - The "Ocean" bar */
 nav {
-  background: var(--primary-blue);
-  padding: 10px 0;
+  background: linear-gradient(to right, var(--primary-deep), var(--ocean-breeze));
+  padding: 15px 0;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 nav ul {
@@ -74,18 +89,19 @@ nav a {
   padding: 8px 15px;
   border-radius: 4px;
   font-weight: 500;
+  transition: background 0.3s ease;
 }
 
 nav a:hover, nav a:focus {
-  background: var(--secondary-blue);
-  outline: 3px solid var(--focus-ring); /* Strong focus indicator */
+  background: rgba(255, 255, 255, 0.2);
+  outline: 3px solid var(--focus-ring);
   outline-offset: 2px;
 }
 
-/* Insight/Notice Boxes */
+/* Insight/Notice Boxes - The "Forest Floor" */
 .insight-box {
-  background: var(--accent-light);
-  border-left: 6px solid var(--secondary-blue);
+  background: var(--accent-mist);
+  border-left: 6px solid var(--secondary-forest);
   padding: 24px;
   border-radius: 4px;
   margin: 30px 0;
@@ -94,7 +110,7 @@ nav a:hover, nav a:focus {
 .insight-box h2 {
   border: none;
   margin-top: 0;
-  color: var(--secondary-blue);
+  color: var(--secondary-forest);
 }
 
 /* Resource Grid */
@@ -105,53 +121,56 @@ nav a:hover, nav a:focus {
   margin-top: 20px;
 }
 
+/* Cards */
 .card {
   background: var(--bg-white);
   border: 1px solid var(--border-color);
+  border-top: 4px solid var(--ocean-breeze); /* "Water" accent */
   border-radius: 8px;
   padding: 24px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
 }
 
 .card:hover {
-  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
-  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(10, 77, 85, 0.15);
+  transform: translateY(-5px);
+  border-top-color: var(--secondary-forest); /* Transitions to "Forest" on hover */
 }
 
 .card h3 {
   margin-top: 0;
   font-size: 1.4rem;
+  color: var(--primary-deep);
 }
 
 .card p {
   color: var(--text-muted);
-  flex-grow: 1; /* Pushes the link to the bottom */
+  flex-grow: 1;
 }
 
 .card a {
   display: inline-block;
   margin-top: 15px;
-  color: var(--secondary-blue);
+  color: var(--secondary-forest);
   font-weight: bold;
   text-decoration: underline;
   text-underline-offset: 4px;
 }
 
 .card a:hover {
-  color: var(--primary-blue);
-  text-decoration-thickness: 2px;
+  color: var(--ocean-breeze);
 }
 
-/* Tags (Small pills for categories) */
+/* Tags */
 .tag {
-  background: #e2e8f0;
-  color: #475569;
+  background: #d4e4e1;
+  color: #2d5a27;
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  padding: 4px 10px;
+  padding: 4px 12px;
   border-radius: 50px;
   width: fit-content;
   margin-bottom: 12px;
@@ -161,10 +180,14 @@ nav a:hover, nav a:focus {
 /* Footer */
 footer {
   text-align: center;
-  padding: 40px;
+  padding: 60px 40px;
   margin-top: 60px;
-  background: #eee;
-  border-top: 1px solid var(--border-color);
+  background: var(--primary-deep);
+  color: white;
+}
+
+footer a {
+  color: var(--focus-ring);
 }
 
 /* Responsive adjustments */
@@ -172,6 +195,7 @@ footer {
   nav ul {
     flex-direction: column;
     align-items: center;
+    gap: 10px;
   }
   h1 { font-size: 2rem; }
 }
