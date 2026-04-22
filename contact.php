@@ -1,3 +1,6 @@
+<?php 
+include('exampleData.inc.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,43 +25,26 @@
       <li><a href="tools.html">Tools</a></li>
       <li><a href="best-practices.html">Best Practices</a></li>
       <li><a href="Resources.html" aria-current="page" style="font-weight: bold;">Resources</a></li>
-      <li><a href="contact.html">Contact</a></li>
+      <li><a href="contact.php">Contact</a></li>
     </ul>
   </nav>
 </header>
 
 <hr>
+<body>
+    <form>
+        <fieldset>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" value="<?= $name ?>"
 
-<main id="main-content">
-  <section>
-    <h2>External Learning</h2>
-    <p>Deep dives into inclusive design from industry leaders.</p>
-    
-    <div class="resource-grid">
-      <article class="card">
-        <span class="tag">Education</span>
-        <h3>WebAIM</h3>
-        <p>Comprehensive articles on screen reader surveys and web accessibility technicalities.</p>
-        <a href="https://webaim.org" target="_blank" rel="noopener">Visit WebAIM</a>
-      </article>
-
-      <article class="card">
-        <span class="tag">Community</span>
-        <h3>A11y Project</h3>
-        <p>A community-driven effort to make digital accessibility easier to digest.</p>
-        <a href="https://www.a11yproject.com/" target="_blank" rel="noopener">Explore A11y Project</a>
-      </article>
-    </div>
-  </section>
-  <section class="insight-box">
-    <h2>Internal Policies</h2>
-    <p>How we handle accessibility within our organization.</p>
-    <ul>
-      <li><a href="accessibility.html">Our Accessibility Statement</a></li>
-    </ul>
-  </section>
-</main>
-
+        <label for="mail">Email:</label>
+         <input type="email" id="mail" name="email" value="<?= $email ?>"
+        
+        <button type="submit">
+            Contact us
+        </button>
+        </fieldset>
+    </form>
 <hr>
 
 <footer>
